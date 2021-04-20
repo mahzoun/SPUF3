@@ -3,4 +3,4 @@ project(SPUF3)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(SPUF3 main.cpp)
+add_executable(SPUF3 main.cpp PUF.cpp PUF.h)

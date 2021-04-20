@@ -11,7 +11,7 @@ https://ieeexplore.ieee.org/abstract/document/8008504
 ```
 x@y:~/SPUF1$ cmake . #code directory
 x@y:~/SPUF1$ make
-x@y:~/SPUF1$ ./SPUF2
+x@y:~/SPUF1$ ./SPUF3
 ```
 
 ### Notes on the Implementation

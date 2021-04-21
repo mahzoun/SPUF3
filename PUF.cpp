@@ -7,10 +7,16 @@ static std::random_device rd;
 static std::mt19937 rng{rd()};
 
 void PUF::Init() {
-    static std::uniform_int_distribution<int> uid(0, 1); // random dice
-    for (int i = 0; i < M; i++)
-        for (int j = 0; j < N; j++)
-            S[i][j] = uid(rng);
+//    static std::uniform_int_distribution<int> uid(0, 1); // random dice
+//    for (int i = 0; i < M; i++)
+//        for (int j = 0; j < N; j++)
+//            S[i][j] = uid(rng);
+    S[0] = 13;
+    S[1] = 25;
+    S[2] = 43;
+    S[3] = 20;
+    S[4] = 47;
+    S[5] = 59;
 }
 
 void PUF::Fight(int A, int B) {

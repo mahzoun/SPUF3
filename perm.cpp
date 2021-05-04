@@ -6,7 +6,7 @@
 #include <map>
 
 
-const int N = 5, R = 4;
+const int N = 4, R = 3;
 
 using namespace std;
 
@@ -18,7 +18,8 @@ void perm_exp(){
 	int a[N], val[N], b[R];
 	for(int i = 0; i < N; i++)
 		a[i] = i;
-
+	
+	int total_ch = 0;
 	
 	do{
 
@@ -32,6 +33,7 @@ void perm_exp(){
 		}
 		cout << endl;
 		do{
+			total_ch++;
 			for(int i = 0; i < N; i++)
 				val[i] = i;
 			for(int i = 0; i < R - 1; i++){
@@ -42,14 +44,16 @@ void perm_exp(){
 				}
 			}
 			for(int i = 0; i < R; i++)
-				cout << b[i];
+				cout << b[i] << " ";
 			cout << "\t";
-			for(int i = 0; i < R; i++)
-				cout << val[b[i]];
+			for(int i = 0; i < N; i++)
+				cout << val[i] << " ";
 			cout << endl;
-			string res = "000";
-			for(int i = 0; i < R; i++){
-				res[i] = val[b[i]] + '0';
+			string res = "";
+			for(int i = 0; i < N; i++)
+				res += "0";
+			for(int i = 0; i < N; i++){
+				res[i] = val[i] + '0';
 			}
 			m[res]++;
 		} while (next_permutation(b, b + R));
@@ -61,7 +65,7 @@ void perm_exp(){
 			cout << it->first << "\t" << it->second <<endl;
 			counter++;
 		}
-	cout << counter << endl;
+	cout << total_ch << "\t" << counter << endl;
 }
 
 void seq_exp(){
@@ -130,8 +134,8 @@ void seq_exp(){
 
 int main(){
 	ios_base::sync_with_stdio(false);
-	//perm_exp(); // set N, R for experiments based on permutations
-	seq_exp();
+	perm_exp(); // set N, R for experiments based on permutations
+	//seq_exp();
 	return 0;
 }
 
